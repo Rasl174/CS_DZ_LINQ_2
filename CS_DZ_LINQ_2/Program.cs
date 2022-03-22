@@ -18,11 +18,11 @@ namespace CS_DZ_LINQ_2
                 Console.WriteLine(prisioner.Name);
             }
 
-            var prisionersInPrison = prisioners.RemoveAll(prisioner => prisioner.Crime.Contains("Антиправительственное"));
+            var prisionersInPrison = prisioners.Where(prisioner => !prisioner.Crime.Contains("Антиправительственное"));
 
             Console.SetCursorPosition(0, 5);
 
-            foreach (var prisioner in prisioners)
+            foreach (var prisioner in prisionersInPrison)
             {
                 Console.WriteLine(prisioner.Name);
             }
